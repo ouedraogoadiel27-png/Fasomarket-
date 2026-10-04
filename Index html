@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FasoMarket 🇧🇫</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🇧🇫 FasoMarket</div>
+
+  <button class="cart-button" onclick="openCart()">
+    🛒 Panier <span id="cart-count">0</span>
+  </button>
+</header>
+
+<section class="hero">
+  <h1>Bienvenue sur FasoMarket 🇧🇫</h1>
+  <p>Achetez facilement auprès des boutiques du Burkina Faso.</p>
+
+  <div class="search-box">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Rechercher un produit..."
+      oninput="searchProducts()"
+    >
+  </div>
+</section>
+
+<section class="categories">
+  <h2>Catégories</h2>
+
+  <div class="category-buttons">
+    <button onclick="displayProducts()">Tous</button>
+    <button onclick="filterCategory('Mode')">👕 Mode</button>
+    <button onclick="filterCategory('Téléphones')">📱 Téléphones</button>
+    <button onclick="filterCategory('Beauté')">💄 Beauté</button>
+    <button onclick="filterCategory('Alimentation')">🍔 Alimentation</button>
+    <button onclick="filterCategory('Maison')">🏠 Maison</button>
+    <button onclick="filterCategory('Gaming')">🎮 Gaming</button>
+    <button onclick="filterCategory('Sports')">⚽ Sports</button>
+    <button onclick="filterCategory('Informatique')">💻 Informatique</button>
+    <button onclick="filterCategory('Électronique')">🔌 Électronique</button>
+    <button onclick="filterCategory('Chaussures')">👟 Chaussures</button>
+  </div>
+</section>
+
+<!-- BOUTIQUES -->
+<section id="shops-section" class="section">
+  <div class="section-title">
+    <h2>🏪 Nos boutiques</h2>
+    <p>Découvrez les boutiques disponibles sur FasoMarket.</p>
+  </div>
+
+  <div id="shops" class="shops-grid"></div>
+</section>
+
+<!-- PAGE D'UNE BOUTIQUE -->
+<section id="shop-page" class="shop-page">
+
+  <button class="back-button" onclick="closeShop()">
+    ← Retour aux boutiques
+  </button>
+
+  <div id="shop-details"></div>
+
+  <h2 class="shop-products-title">🛍️ Produits de la boutique</h2>
+
+  <div id="shop-products" class="products"></div>
+
+</section>
+
+<!-- PRODUITS -->
+<section id="products-section" class="section">
+
+  <div class="section-title">
+    <h2>🔥 Produits populaires</h2>
+    <p>Découvrez nos meilleures offres.</p>
+  </div>
+
+  <div id="products" class="products"></div>
+
+</section>
+
+<!-- PANIER -->
+<div id="cart-modal" class="modal">
+
+  <div class="cart-box">
+
+    <button class="close-button" onclick="closeCart()">✕</button>
+
+    <h2>🛒 Mon panier</h2>
+
+    <div id="cart-items"></div>
+
+    <div class="cart-total">
+      Total : <strong id="cart-total">0 F CFA</strong>
+    </div>
+
+    <button class="order-button" onclick="orderWhatsApp()">
+      📱 Commander sur WhatsApp
+    </button>
+
+  </div>
+
+</div>
+
+<footer>
+  <h3>🇧🇫 FasoMarket</h3>
+  <p>La marketplace locale du Burkina Faso.</p>
+  <p>© 2026 FasoMarket</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
